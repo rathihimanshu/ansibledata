@@ -1,0 +1,27 @@
+---
+
+- import_playbook: inplay.yaml
+
+- hosts: ansi2
+  tasks:
+    - debug: msg=bye
+#    - include_tasks: intask.yaml
+#    - import_tasks: intask.yaml 
+    - set_fact: var=something
+    - debug: msg={{ var }}
+#    - debug: msg={{ newval }}
+
+- hosts: ansi2
+  tasks:
+    - include_tasks: intask.yaml
+      when: newval is not defined
+- hosts: ansi2
+#  gather_facts: no
+  tasks:
+    - import_tasks: imtask.yaml
+      when: newval is not defined
+
+- hosts: ansi2
+  tasks: 
+    - debug: msg=test
+     

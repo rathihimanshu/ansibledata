@@ -1,0 +1,10 @@
+---
+- hosts: ansi2
+  gather_facts: no
+  tasks: 
+    - name: one
+      debug: msg=one
+      tags: one
+    - name: two
+      debug: msg=two
+      tags: two

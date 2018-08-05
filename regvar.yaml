@@ -1,0 +1,14 @@
+---
+
+- hosts: ansi2
+  gather_facts: no
+  tasks:
+    - name: one
+      shell: "ls -la"
+      args:
+        chdir: /var/log
+      register: outputhere
+    - name: something
+      shell: "echo {{ outputhere }} > /home/administrator/output.txt"
+    - debug:
+        var: outputhere      

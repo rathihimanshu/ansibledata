@@ -1,0 +1,6 @@
+---
+- hosts: ansi2
+  name: debug
+  debugger: on_failed
+  tasks:
+    - file: path=/home/administrator/{{ dir }}/{{ file }}.txt state=touch

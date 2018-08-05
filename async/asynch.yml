@@ -1,0 +1,11 @@
+---
+- hosts: ansi2
+  become: yes
+  gather_facts: no
+  tasks:
+    - apt: name=tomcat7 state=latest
+      async: 300
+      poll: 5
+    - command: /bin/sleep 20
+      async: 40
+      poll: 0

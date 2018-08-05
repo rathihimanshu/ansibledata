@@ -1,0 +1,16 @@
+---
+
+- hosts: ansi2
+  gather_facts: no
+  vars:
+    - var1: variable1
+    - var2: variable2
+  vars_files:
+    - vars.yaml
+  vars_prompt:
+    - name: var4
+      prompt: Value of var4 > 
+  tasks:
+    - name: first
+      shell: echo "{{ var1 }} && {{ var4 }}" > /home/administrator/var.txt
+    

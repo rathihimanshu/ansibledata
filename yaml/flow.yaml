@@ -1,0 +1,3 @@
+---
+- hosts: ansi2
+  tasks: [{ping: },{debug: msg=test}]

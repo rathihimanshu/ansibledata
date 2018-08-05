@@ -1,0 +1,9 @@
+---
+
+- hosts: ansi2
+  tasks:
+    - name: block test
+      block:
+        - file: path=/home/administrator/b1.txt state=touch
+        - file: path=/home/administrator/b2.txt state=touch
+  

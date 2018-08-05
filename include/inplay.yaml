@@ -1,0 +1,4 @@
+---
+- hosts: ansi2
+  tasks:
+    - debug: msg=hello

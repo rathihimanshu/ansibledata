@@ -1,0 +1,13 @@
+---
+- hosts: all
+  gather_facts: no
+  any_errors_fatal: true
+  tasks:
+    - name: debu
+      debug: msg=hello
+    - name: fail
+      command: sample
+      register: new
+      failed_when: "'No command' in new.stderr"
+    - name: th
+      debug: msg=memo

@@ -1,0 +1,10 @@
+---
+- hosts: localhost
+  vars_files:
+    - file1.yml
+    - file2.yml
+  tasks:
+    - name: t1
+      copy: content='{{ var1 }}' dest=/home/administrator/testplays/vault/first.txt 
+    - name: t2
+      copy: content='{{ var2 }}' dest=/home/administrator/testplays/vault/secondry.txt

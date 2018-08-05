@@ -1,0 +1,8 @@
+---
+- hosts: ansi2
+  tasks:
+    - name: create a file
+      file: path=/home/administrator/s1.txt state=touch mode=0777
+
+
+...

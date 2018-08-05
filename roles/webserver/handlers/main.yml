@@ -1,0 +1,4 @@
+---
+- name: hand1
+  file: path=/home/administrator/testplays/roledemohand.txt state=touch
+

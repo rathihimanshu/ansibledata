@@ -1,0 +1,11 @@
+---
+- name: file role
+  file: path=/home/administrator/testplays/roledemo.txt state=touch
+  notify: hand1
+- name: file 1
+  copy: src=sample.txt dest=/home/administrator/testplays/roledemo2.txt 
+- name: file 2   
+  template: src=sample.j2 dest=/home/administrator/testplays/roledemo3.txt
+- name: file 3
+  copy: content='{{ var }}' dest=/home/administrator/testplays/roledemo4.txt   
+

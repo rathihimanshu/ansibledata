@@ -1,0 +1,10 @@
+---
+- hosts: ansi2
+  gather_facts: no
+  handlers:
+    - name: second
+      file: path=/home/administrator/two.txt state=touch
+  tasks:
+    - name: first
+      file: path=/home/administrator/one.txt state=touch
+      notify: second
