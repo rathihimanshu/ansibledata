@@ -1,0 +1,5 @@
+---
+- hosts: localhost
+  tasks:
+  - cron:
+      job: 'logger hello'

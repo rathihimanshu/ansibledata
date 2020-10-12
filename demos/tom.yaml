@@ -1,0 +1,14 @@
+---
+- hosts: localhost
+  become: true
+  vars:
+  - loc: /home/ansiuser/newmaven 
+  tasks:
+  - shell: "mvn -f {{ loc }}/pom.xml package"
+  - apt: name={{ item }} state=latest 
+    loop:
+    - default-jre
+    - default-jdk
+    - tomcat8
+  - service: name=tomcat8 state=started
+  - copy: src="{{ loc }}/target/JenkinsWar.war" dest=/var/lib/tomcat8/webapps/appone.war 

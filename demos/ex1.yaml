@@ -1,0 +1,8 @@
+---
+- hosts: localhost
+  tasks:
+  - file: name=/home/ansiuser/exdemo state=directory
+  - lineinfile: 
+      path: /home/ansiuser/exdemo/hello.txt
+      create: yes
+      line: 'hello i am good'

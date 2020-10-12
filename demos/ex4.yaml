@@ -1,0 +1,6 @@
+---
+- hosts: localhost
+  become: yes
+  tasks:
+  - user: name=playuser groups=sudo append=yes
+  
