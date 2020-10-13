@@ -1,0 +1,9 @@
+---
+- hosts: all
+  tasks:
+  - file: name=/home/ansiuser/del.txt state=touch
+    delegate_to: node
+    run_once: yes
+  - local_action: shell 'hostname'
+    register: myname
+  - debug: msg=myname
